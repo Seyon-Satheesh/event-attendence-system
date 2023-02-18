@@ -1,0 +1,23 @@
+/* HIDE/SHOW ITEMS */
+
+.error-msg {
+    display: block;
+    position: relative;
+    color: #E81123;
+    font-size: 2.5vh;
+    width: 100%;
+    height: 100%;
+    /* height: 1vh; */
+    /* border: 1px solid #FFF; */
+    margin: 0;
+    margin-bottom: 2vh;
+    padding: 0;
+}
+
+.invisible {
+    display: none;
+  }
+  
+.visible {
+    display: block;
+}

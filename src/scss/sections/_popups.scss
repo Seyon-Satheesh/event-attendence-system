@@ -1,0 +1,28 @@
+/* STYLING OF LOGIN/REGISTER POPUP */
+
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 60%;
+    padding: 5%;
+    transform: translate(35%, 35%);
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* STYLING FOR LINKS SWITCHING BETWEEN LOGIN AND REGISTER POPUPS */
+
+.switch-popup-view {
+    cursor: default;
+}
+
+.switch-popup-view > * {
+    opacity: 60%;
+}
+  
+.switch-popup-view > a {
+    opacity: 87%;
+}

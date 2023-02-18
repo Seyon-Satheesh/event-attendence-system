@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <script type="module" src="/src/custom-select.ts" defer></script>
+  </head>
+  <body>
+    <!-- MAIN CONTENT OF PAGE -->
+    <div id="main">
+      <!-- LOGIN/REGISTER POPUP -->
+      <div id="popup">
+        <!-- LOGIN PORTION -->
+        <div id="login">
+          <h1 style="margin: 0; margin-bottom: 2vh; padding: 0; font-size: 5.5vh;">Login</h1>
+          <span id="login-error" class="error-msg invisible">Invalid Username and/or Password</span>
+          <form id="login-form">
+            <input type="text" autocomplete="off" id="login-username" class="login-input" placeholder="Username">
+            <input type="password" autocomplete="off" id="login-password" class="login-input" placeholder="Password">
+            <button type="submit" id="login-button">Login</button>
+          </form>
+          <span class="switch-popup-view"><span>Don't have an account yet?</span>&nbsp;&nbsp;<a id="switch-to-register">Create an account</a></span>
+        </div>
+
+        <!-- REGISTER PORTION -->
+        <div id="register">
+          <h1 style="margin: 0; margin-bottom: 2vh; padding: 0; font-size: 5.5vh;">Create Account</h1>
+          <span id="register-error" class="error-msg invisible">Invalid Username and/or Password</span>
+          <form id="register-form">
+            <input type="text" autocomplete="off" id="register-first-name" class="register-input" placeholder="First Name"><input type="text" autocomplete="off" id="register-last-name" class="register-input" placeholder="Last Name">
+            <!-- <select id="register-role" class="register-input" placeholder="Role">
+              <option value="" disabled selected>Role</option>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="admin">Admin</option>
+            </select> -->
+            <div id="register-role" class="register-input custom-select" style="width:100%;">
+              <select id="register-role-value">
+                <option value="0">Role</option>
+                <option value="1">Student</option>
+                <option value="2">Teacher</option>
+                <option value="3">Admin</option>
+              </select>
+            </div>
+            <div id="register-grade" class="register-input custom-select invisible" style="width:100%;">
+              <select id="register-grade-value">
+                <option value="0">Grade</option>
+                <option value="1">Grade 9</option>
+                <option value="2">Grade 10</option>
+                <option value="3">Grade 11</option>
+                <option value="4">Grade 12</option>
+              </select>
+            </div>
+            <!-- <input type="number" min="9" max="12" autocomplete="off" id="register-username" class="register-input" placeholder="Grade"> -->
+            <!-- <label for="register-grade" id="register-grade-label" style="opacity: 0.6;">Grade 9</label>
+            <input type="range" min="9" max="12" autocomplete="off" id="register-grade" class="register-input" placeholder="Grade" style="padding: 0;"> -->
+            <input type="text" autocomplete="off" id="register-username" class="register-input" placeholder="Username">
+            <input type="text" autocomplete="nope" id="register-email" class="register-input" placeholder="Email">
+            <input type="password" autocomplete="off" id="register-password" class="register-input" placeholder="Password">
+            <button type="submit" id="register-button">Sign Up</button>
+          </form>
+          <span class="switch-popup-view"><span>Already have an account?</span>&nbsp;&nbsp;<a id="switch-to-login">Login</a></span>
+        </div>
+      </div>
+
+      <!-- ACTUAL CONTENT -->
+      <div id="page" class="invisible">
+        <h1>💖 Hello World!</h1>
+        <p>Welcome to your Electron application.</p>
+      </div>
+    </div>
+  </body>
+</html>

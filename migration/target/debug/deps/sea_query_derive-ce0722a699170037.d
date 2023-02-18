@@ -1,0 +1,9 @@
+C:\Seyon\FBLA\CNLC(NLC) 2023\Event Attendence System\migration\target\debug\deps\sea_query_derive-ce0722a699170037.dll: C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\lib.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\error.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_attr.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_path.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_variant.rs
+
+C:\Seyon\FBLA\CNLC(NLC) 2023\Event Attendence System\migration\target\debug\deps\sea_query_derive-ce0722a699170037.d: C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\lib.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\error.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_attr.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_path.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_variant.rs
+
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\lib.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\error.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_attr.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_path.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sea-query-derive-0.2.0\src\iden_variant.rs:

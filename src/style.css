@@ -1,0 +1,472 @@
+/* BASIC STYLING OF APP */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1A2933;
+  color: #FFF;
+}
+
+#main {
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+h1, p {
+  margin: 0 0 1em;
+}
+
+body {
+  background-color: #121212;
+  color: white;
+}
+
+h1 {
+  opacity: 87%;
+}
+
+h2 {
+  opacity: 60%;
+}
+
+p {
+  opacity: 38%;
+}
+
+/* HIDE/SHOW ITEMS */
+.error-msg {
+  display: block;
+  position: relative;
+  color: #E81123;
+  font-size: 2.5vh;
+  width: 100%;
+  height: 100%;
+  /* height: 1vh; */
+  /* border: 1px solid #FFF; */
+  margin: 0;
+  margin-bottom: 2vh;
+  padding: 0;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* ANIMATION FROM LOGIN TO REGISTER */
+@-webkit-keyframes move-login-right {
+  from {
+    transform: translateX(0%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+  to {
+    transform: translateX(-110%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+}
+@keyframes move-login-right {
+  from {
+    transform: translateX(0%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+  to {
+    transform: translateX(-110%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+}
+@-webkit-keyframes move-register-right {
+  from {
+    transform: translateX(110%) translateY(-100%);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    transform: translateX(0%) translateY(-100%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes move-register-right {
+  from {
+    transform: translateX(110%) translateY(-100%);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    transform: translateX(0%) translateY(-100%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+.move-login-right {
+  -webkit-animation-name: move-login-right;
+          animation-name: move-login-right;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.move-register-right {
+  -webkit-animation-name: move-register-right;
+          animation-name: move-register-right;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+/* ANIMATION FROM REGISTER TO LOGIN */
+@-webkit-keyframes move-login-left {
+  from {
+    transform: translateX(-110%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+  to {
+    transform: translateX(0%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes move-login-left {
+  from {
+    transform: translateX(-110%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+  to {
+    transform: translateX(0%) translateY(-50%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@-webkit-keyframes move-register-left {
+  from {
+    transform: translateX(0%) translateY(-100%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+  to {
+    transform: translateX(110%) translateY(-100%);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+}
+@keyframes move-register-left {
+  from {
+    transform: translateX(0%) translateY(-100%);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+  to {
+    transform: translateX(110%) translateY(-100%);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+}
+.move-login-left {
+  -webkit-animation-name: move-login-left;
+          animation-name: move-login-left;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.move-register-left {
+  -webkit-animation-name: move-register-left;
+          animation-name: move-register-left;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 2.5vh;
+  right: 2vh;
+  width: 0;
+  height: 0;
+  border: 1vh solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  margin: 0;
+  text-align: left;
+}
+
+.select-selected {
+  left: 0;
+  padding-left: 0;
+}
+
+.select-items div {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #3a3a3a;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.select-selected {
+  font-size: 2.5vh;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* STYLING OF LOGIN/REGISTER POPUP */
+#popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 60%;
+  padding: 5%;
+  transform: translate(35%, 35%);
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* STYLING FOR LINKS SWITCHING BETWEEN LOGIN AND REGISTER POPUPS */
+.switch-popup-view {
+  cursor: default;
+}
+
+.switch-popup-view > * {
+  opacity: 60%;
+}
+
+.switch-popup-view > a {
+  opacity: 87%;
+}
+
+/* LOGIN SECTION */
+#login {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#login-button {
+  width: 100%;
+  height: 6.25vh;
+  opacity: 60%;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 2.5vh;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  margin-bottom: 2vh;
+}
+
+#login-button:hover {
+  opacity: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* opacity: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #121212; */
+}
+
+.login-input {
+  width: 100%;
+  height: 6.25vh;
+  opacity: 70%;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 2.5vh;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  margin-bottom: 2vh;
+  padding: 0 5%;
+}
+
+.login-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.login-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.login-input:focus {
+  outline: 0;
+}
+
+.login-input::-ms-reveal {
+  filter: invert(100%);
+}
+
+/* REGISTER SECTION */
+#register {
+  position: relative;
+  top: 50%;
+  transform: translateX(110%) translateY(-100%);
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+}
+
+#register-button {
+  width: 100%;
+  height: 6.25vh;
+  opacity: 60%;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 2.5vh;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  margin-bottom: 2vh;
+}
+
+#register-button:hover {
+  opacity: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* opacity: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #121212; */
+}
+
+.register-input {
+  width: 100%;
+  height: 6.25vh;
+  opacity: 70%;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 2.5vh;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  margin-bottom: 2vh;
+  padding: 0 5%;
+  z-index: 1;
+}
+
+.register-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.register-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.register-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.register-input:focus {
+  outline: 0;
+}
+
+.register-input::-ms-reveal {
+  filter: invert(100%);
+}
+
+#register-first-name, #register-last-name {
+  width: 49%;
+  display: inline;
+  margin: 0;
+  margin-bottom: 2vh;
+}
+
+#register-first-name {
+  margin-right: 2%;
+}
+
+#register-role {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: rgba(255, 255, 255, 0.4);
+}/*# sourceMappingURL=style.css.map */

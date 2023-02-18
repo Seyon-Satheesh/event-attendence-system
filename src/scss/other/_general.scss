@@ -1,0 +1,46 @@
+/* BASIC STYLING OF APP */
+
+* {margin: 0; padding: 0; border: 0; vertical-align: baseline;}
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+html, body {height: 100%; margin: 0;}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1A2933;
+  color: #FFF;
+}
+
+#main {
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+h1, p {
+  margin:0 0 1em
+}
+
+body {
+  background-color: #121212;
+  color: white;
+}
+
+h1 {
+  opacity: 87%;
+}
+
+h2 {
+  opacity: 60%;
+}
+
+p {
+  opacity: 38%;
+}

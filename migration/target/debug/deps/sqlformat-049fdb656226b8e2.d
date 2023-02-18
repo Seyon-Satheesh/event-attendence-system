@@ -1,0 +1,10 @@
+c:\Seyon\FBLA\CNLC(NLC) 2023\Event Attendence System\migration\target\debug\deps\sqlformat-049fdb656226b8e2.rmeta: C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\lib.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\formatter.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\indentation.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\inline_block.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\params.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\tokenizer.rs
+
+c:\Seyon\FBLA\CNLC(NLC) 2023\Event Attendence System\migration\target\debug\deps\sqlformat-049fdb656226b8e2.d: C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\lib.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\formatter.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\indentation.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\inline_block.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\params.rs C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\tokenizer.rs
+
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\lib.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\formatter.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\indentation.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\inline_block.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\params.rs:
+C:\Users\Seyon\ Satheesh\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.0\src\tokenizer.rs:
