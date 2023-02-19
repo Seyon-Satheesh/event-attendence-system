@@ -83,153 +83,77 @@ p {
 }
 
 /* ANIMATION FROM LOGIN TO REGISTER */
-@-webkit-keyframes move-login-right {
-  from {
-    transform: translateX(0%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-  }
-  to {
-    transform: translateX(-110%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
-  }
-}
 @keyframes move-login-right {
   from {
     transform: translateX(0%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
   }
   to {
     transform: translateX(-110%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
-  }
-}
-@-webkit-keyframes move-register-right {
-  from {
-    transform: translateX(110%) translateY(-100%);
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
-  }
-  to {
-    transform: translateX(0%) translateY(-100%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 100%);
   }
 }
 @keyframes move-register-right {
   from {
     transform: translateX(110%) translateY(-100%);
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
   }
   to {
     transform: translateX(0%) translateY(-100%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
   }
 }
 .move-login-right {
-  -webkit-animation-name: move-login-right;
-          animation-name: move-login-right;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: move-login-right;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  animation-fill-mode: forwards;
 }
 
 .move-register-right {
-  -webkit-animation-name: move-register-right;
-          animation-name: move-register-right;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: move-register-right;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  animation-fill-mode: forwards;
 }
 
 /* ANIMATION FROM REGISTER TO LOGIN */
-@-webkit-keyframes move-login-left {
-  from {
-    transform: translateX(-110%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
-  }
-  to {
-    transform: translateX(0%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-  }
-}
 @keyframes move-login-left {
   from {
     transform: translateX(-110%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 100%);
-            clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
   }
   to {
     transform: translateX(0%) translateY(-50%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-  }
-}
-@-webkit-keyframes move-register-left {
-  from {
-    transform: translateX(0%) translateY(-100%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-  }
-  to {
-    transform: translateX(110%) translateY(-100%);
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 0 0 0);
   }
 }
 @keyframes move-register-left {
   from {
     transform: translateX(0%) translateY(-100%);
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
   }
   to {
     transform: translateX(110%) translateY(-100%);
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
   }
 }
 .move-login-left {
-  -webkit-animation-name: move-login-left;
-          animation-name: move-login-left;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: move-login-left;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  animation-fill-mode: forwards;
 }
 
 .move-register-left {
-  -webkit-animation-name: move-register-left;
-          animation-name: move-register-left;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-          animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: move-register-left;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.04, 1.05, 0.86, 1.01);
+  animation-fill-mode: forwards;
 }
 
 /* The container must be positioned relative: */
@@ -300,6 +224,7 @@ p {
 
 .select-selected {
   font-size: 2.5vh;
+  z-index: 50;
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -330,6 +255,38 @@ p {
   opacity: 87%;
 }
 
+/* MINI POPUP SECTION */
+#mini-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 45%;
+  height: 45%;
+  padding: 5%;
+  transform: translate(65%, 65%);
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgba(48, 48, 48, 0.9);
+}
+
+#mini-popup-button {
+  width: 100%;
+  height: 15%;
+  border-radius: 8px;
+  color: #FFF;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+#mini-popup-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#mini-popup-message {
+  font-size: 6vh;
+  margin-bottom: 2vh;
+}
+
 /* LOGIN SECTION */
 #login {
   position: relative;
@@ -357,6 +314,14 @@ p {
   color: #121212; */
 }
 
+#login-button:disabled {
+  opacity: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* opacity: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #121212; */
+}
+
 .login-input {
   width: 100%;
   height: 6.25vh;
@@ -368,14 +333,6 @@ p {
   border-radius: 12px;
   margin-bottom: 2vh;
   padding: 0 5%;
-}
-
-.login-input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.login-input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .login-input::placeholder {
@@ -395,8 +352,7 @@ p {
   position: relative;
   top: 50%;
   transform: translateX(110%) translateY(-100%);
-  -webkit-clip-path: inset(0 100% 0 0);
-          clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
 }
 
 #register-button {
@@ -419,6 +375,14 @@ p {
   color: #121212; */
 }
 
+#register-button:disabled {
+  opacity: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* opacity: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #121212; */
+}
+
 .register-input {
   width: 100%;
   height: 6.25vh;
@@ -431,14 +395,6 @@ p {
   margin-bottom: 2vh;
   padding: 0 5%;
   z-index: 1;
-}
-
-.register-input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.register-input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .register-input::placeholder {
@@ -465,8 +421,6 @@ p {
 }
 
 #register-role {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   color: rgba(255, 255, 255, 0.4);
 }/*# sourceMappingURL=style.css.map */

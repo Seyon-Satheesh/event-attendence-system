@@ -11,6 +11,7 @@ use futures::executor::block_on;
 use sea_orm::*;
 use dotenv::dotenv;
 use pwhash::bcrypt;
+use pwhash::unix;
 
 // const DATABASE_URL: &str = "postgres://seyon.satheesh:TjaFgRo8um9h@ep-shiny-lab-553151.us-east-2.aws.neon.tech/neondb";
 // const DB_NAME: &str = "neondb";
@@ -68,6 +69,38 @@ async fn create_new_user(db: &DatabaseConnection, username: &str, password: &str
     Ok(())
 }
 
+async fn login(db: &DatabaseConnection, username: &str, password: &str) -> Result<(), DbErr> {
+    let user_model = User::find()
+    .filter(user::Column::Username.contains(username))
+    .one(db)
+    .await?;
+
+    if (user_model == None) {
+        return Err(sea_orm::DbErr::Custom("Invalid Credentials".to_string()));
+    }
+
+    let active_user_model = user_model.unwrap();
+    
+    if(!unix::verify(password, &active_user_model.password)) {
+        return Err(sea_orm::DbErr::Custom("Invalid Credentials".to_string()));
+    }
+
+    Ok(())
+}
+
+async fn get_user_role(db: &DatabaseConnection, username: &str) -> Result<String, DbErr> {
+    let user_model = User::find()
+    .filter(user::Column::Username.contains(username))
+    .one(db)
+    .await?;
+    let active_user_model = user_model.unwrap();
+
+    let role_model = Role::find_by_id(active_user_model.role).one(db).await?;
+    let active_role_model = role_model.unwrap();
+
+    Ok(active_role_model.name)
+}
+
 fn main() {
     // if let Err(err) = block_on(run()) {
     //     panic!("{}", err);
@@ -75,7 +108,7 @@ fn main() {
     dotenv().ok();
     tauri::Builder::default()
         .manage(DB(Default::default()))
-        .invoke_handler(tauri::generate_handler![greet, print, db_connect, create_role, create_user])
+        .invoke_handler(tauri::generate_handler![greet, print, db_connect, create_role, create_user, login_user, user_role])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -141,6 +174,42 @@ fn create_user(username: &str, password: &str, first_name: &str, last_name: &str
         },
         Err(err) => {
             println!("Error Creating User");
+            println!("{}", err.to_string());
+            Ok(err.to_string())
+        },
+    }
+}
+
+// Enable JS and TS to login users
+#[tauri::command]
+fn login_user(username: &str, password: &str, db_state: State<DB>) -> Result<String, String> {
+    let mut db = db_state.0.lock().unwrap();
+
+    match block_on(login(&*db, username, password)) {
+        Ok(val) => {
+            println!("User Logged In");
+            Ok("Success".into())
+        },
+        Err(err) => {
+            println!("Error Logging User In");
+            println!("{}", err.to_string());
+            Ok(err.to_string())
+        },
+    }
+}
+
+// Enable JS and TS to get the role of a user
+#[tauri::command]
+fn user_role(username: &str, db_state: State<DB>) -> Result<String, String> {
+    let mut db = db_state.0.lock().unwrap();
+
+    match block_on(get_user_role(&*db, username)) {
+        Ok(val) => {
+            println!("Got User Role");
+            Ok(val)
+        },
+        Err(err) => {
+            println!("Error Getting User Role");
             println!("{}", err.to_string());
             Ok(err.to_string())
         },
