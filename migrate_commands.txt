@@ -1,2 +1,0 @@
-sea-orm-cli migrate refresh
-sea-orm-cli generate entity -u postgres://seyon.satheesh:TjaFgRo8um9h@ep-shiny-lab-553151.us-east-2.aws.neon.tech/neondb -o src-tauri/src/entities
