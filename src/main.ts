@@ -2,6 +2,10 @@ import { invoke } from "@tauri-apps/api/tauri";
 
 let currentUser: string | null = null;
 let currentUserRole: string | null = null;
+let currentUserFirstName: string | null = null;
+let currentUserLastName: string | null = null;
+let currentUserPoints: number | null = null;
+let currentUserPlace: number | null = null;
 
 let roles = ["Student", "Student Leader", "Teacher", "Administrator", "Principal"]
 
@@ -20,6 +24,7 @@ async function greet() {
 window.addEventListener("DOMContentLoaded", async () => {
   await db_connect();
   showPopup("Hi");
+  makeRestrictedVisible();
   // create_role("Student", "NYS");
   // create_role("Student Leader", "NYS");
   // create_role("Teacher", "NYS");
@@ -47,6 +52,24 @@ window.addEventListener("DOMContentLoaded", async () => {
   document
     .querySelector("#mini-popup-button")
     ?.addEventListener("click", () => hidePopup());
+  document
+    .querySelector("#logout")
+    ?.addEventListener("click", () => logout());
+  document
+    .querySelector("#dashboard")
+    ?.addEventListener("click", () => showDashboard());
+  document
+    .querySelector("#events")
+    ?.addEventListener("click", () => showEvents());
+  document
+    .querySelector("#rankings")
+    ?.addEventListener("click", () => showRankings());
+  document
+    .querySelector("#users")
+    ?.addEventListener("click", () => showUsers());
+  document
+    .querySelector("#prizes")
+    ?.addEventListener("click", () => showPrizes());
 });
 
 async function login(form: any) {
@@ -67,14 +90,51 @@ async function login(form: any) {
   }
 
   let res = await login_user(username, password);
+  let split_res = res.split(", ");
 
-  if (res == "Success") {
+  if (split_res[0] == "Success") {
     hideLoginError();
     currentUser = username;
-    currentUserRole = await user_role(currentUser);
+    currentUserRole = split_res[1];
+    currentUserFirstName = split_res[2];
+    currentUserLastName = split_res[3];
+    currentUserPoints = await user_points(currentUser);
+    currentUserPlace = await user_place(currentUser);
+
+    showPopup(currentUserPlace.toString());
+
+    document.getElementById("greeting").innerHTML = `Hello ${currentUserLastName}, ${currentUserFirstName}!`;
+
+    if (currentUserRole == "Student" || currentUserRole == "Student Leader") {
+      if (Number.isNaN(currentUserPoints) || Number.isNaN(currentUserPlace)) {
+        currentUser = null;
+        currentUserRole = null;
+        currentUserFirstName = null;
+        currentUserLastName = null;
+        currentUserPoints = null;
+        currentUserPlace = null;
+  
+        showPopup("Something went wrong");
+        document.getElementById("login-password").value = "";
+        button.disabled = false;
+  
+        return;
+      }
+  
+      document.getElementById("points-counter").innerHTML = currentUserPoints.toString();
+      document.getElementById("place-counter").innerHTML = ordinal_suffix_of(currentUserPlace);
+    }
+
+    makeRestrictedInvisible();
+
+    // add_points(currentUser, 10);
+    // verify_user(currentUser);
+
     document.getElementById("login-username").value = "";
 
     document.getElementById("popup").classList.add("invisible");
+    document.getElementById("popup").classList.remove("visible");
+
     document.getElementById("page").classList.add("visible");
     document.getElementById("page").classList.remove("invisible");
   } else if (res == "Custom Error: Invalid Credentials") {
@@ -133,6 +193,179 @@ async function register(form: any) {
 
 
   button.disabled = false;
+}
+
+function logout() {
+  currentUser = null;
+  currentUserRole = null;
+  currentUserFirstName = null;
+  currentUserLastName = null;
+  currentUserPoints = null;
+  currentUserPlace = null;
+
+  showDashboard();
+  makeRestrictedVisible();
+
+  document.getElementById("popup").classList.add("visible");
+  document.getElementById("popup").classList.remove("invisible");
+
+  document.getElementById("page").classList.add("invisible");
+  document.getElementById("page").classList.remove("visible");
+}
+
+function makeRestrictedVisible() {
+  let restrictedItems = document.getElementsByClassName("restricted");
+
+  for (let i = 0; i < restrictedItems.length; i++) {
+    restrictedItems[i].classList.remove("invisible");
+    restrictedItems[i].classList.add("visible");
+  }
+}
+
+function makeRestrictedInvisible() {
+  let restrictedItems = document.getElementsByClassName("restricted");
+
+  for (let i = 0; i < restrictedItems.length; i++) {
+    if (!restrictedItems[i].dataset.restricted.split(", ").includes(currentUserRole)) {
+      restrictedItems[i].classList.remove("visible");
+      restrictedItems[i].classList.add("invisible");
+    }
+  }
+}
+
+function showDashboard() {
+  if (document.getElementById("dashboard-content").classList.contains("invisible")) {
+    document.getElementById("dashboard-content").classList.remove("invisible");
+    document.getElementById("dashboard-content").classList.add("visible");
+  }
+
+  if (document.getElementById("events-content").classList.contains("visible")) {
+    document.getElementById("events-content").classList.remove("visible");
+    document.getElementById("events-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("users-content").classList.contains("visible")) {
+    document.getElementById("users-content").classList.remove("visible");
+    document.getElementById("users-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("rankings-content").classList.contains("visible")) {
+    document.getElementById("rankings-content").classList.remove("visible");
+    document.getElementById("rankings-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("prizes-content").classList.contains("visible")) {
+    document.getElementById("prizes-content").classList.remove("visible");
+    document.getElementById("prizes-content").classList.add("invisible");
+  }
+}
+
+function showEvents() {
+  if (document.getElementById("dashboard-content").classList.contains("visible")) {
+    document.getElementById("dashboard-content").classList.remove("visible");
+    document.getElementById("dashboard-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("events-content").classList.contains("invisible")) {
+    document.getElementById("events-content").classList.remove("invisible");
+    document.getElementById("events-content").classList.add("visible");
+  }
+
+  if (document.getElementById("users-content").classList.contains("visible")) {
+    document.getElementById("users-content").classList.remove("visible");
+    document.getElementById("users-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("rankings-content").classList.contains("visible")) {
+    document.getElementById("rankings-content").classList.remove("visible");
+    document.getElementById("rankings-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("prizes-content").classList.contains("visible")) {
+    document.getElementById("prizes-content").classList.remove("visible");
+    document.getElementById("prizes-content").classList.add("invisible");
+  }
+}
+
+function showUsers() {
+  if (document.getElementById("dashboard-content").classList.contains("visible")) {
+    document.getElementById("dashboard-content").classList.remove("visible");
+    document.getElementById("dashboard-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("events-content").classList.contains("visible")) {
+    document.getElementById("events-content").classList.remove("visible");
+    document.getElementById("events-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("users-content").classList.contains("invisible")) {
+    document.getElementById("users-content").classList.remove("invisible");
+    document.getElementById("users-content").classList.add("visible");
+  }
+
+  if (document.getElementById("rankings-content").classList.contains("visible")) {
+    document.getElementById("rankings-content").classList.remove("visible");
+    document.getElementById("rankings-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("prizes-content").classList.contains("visible")) {
+    document.getElementById("prizes-content").classList.remove("visible");
+    document.getElementById("prizes-content").classList.add("invisible");
+  }
+}
+
+function showRankings() {
+  if (document.getElementById("dashboard-content").classList.contains("visible")) {
+    document.getElementById("dashboard-content").classList.remove("visible");
+    document.getElementById("dashboard-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("events-content").classList.contains("visible")) {
+    document.getElementById("events-content").classList.remove("visible");
+    document.getElementById("events-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("users-content").classList.contains("visible")) {
+    document.getElementById("users-content").classList.remove("visible");
+    document.getElementById("users-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("rankings-content").classList.contains("invisible")) {
+    document.getElementById("rankings-content").classList.remove("invisible");
+    document.getElementById("rankings-content").classList.add("visible");
+  }
+
+  if (document.getElementById("prizes-content").classList.contains("visible")) {
+    document.getElementById("prizes-content").classList.remove("visible");
+    document.getElementById("prizes-content").classList.add("invisible");
+  }
+}
+
+function showPrizes() {
+  if (document.getElementById("dashboard-content").classList.contains("visible")) {
+    document.getElementById("dashboard-content").classList.remove("visible");
+    document.getElementById("dashboard-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("events-content").classList.contains("visible")) {
+    document.getElementById("events-content").classList.remove("visible");
+    document.getElementById("events-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("users-content").classList.contains("visible")) {
+    document.getElementById("users-content").classList.remove("visible");
+    document.getElementById("users-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("rankings-content").classList.contains("visible")) {
+    document.getElementById("rankings-content").classList.remove("visible");
+    document.getElementById("rankings-content").classList.add("invisible");
+  }
+
+  if (document.getElementById("prizes-content").classList.contains("invisible")) {
+    document.getElementById("prizes-content").classList.remove("invisible");
+    document.getElementById("prizes-content").classList.add("visible");
+  }
 }
 
 // function gradeChange() {
@@ -237,8 +470,24 @@ function registerRoleChange() {
   }
 }
 
+// Modified version of Salman A's code found on https://stackoverflow.com/questions/13627308/add-st-nd-rd-and-th-ordinal-suffix-to-a-number
+function ordinal_suffix_of(i: number) : string {
+  let j = i % 10;
+  let k = i % 100;
+  if (j == 1 && k != 11) {
+      return i + "st";
+  }
+  if (j == 2 && k != 12) {
+      return i + "nd";
+  }
+  if (j == 3 && k != 13) {
+      return i + "rd";
+  }
+  return i + "th";
+}
+
 // DEFINE SHORTHANDS FOR ALL CUSTOM TAURI CALLBACKS
-async function print(text:string) {
+async function print(text: string) {
   await invoke("print", {text: text});
 }
 
@@ -264,8 +513,38 @@ async function login_user(username: string, password: string) : Promise<string> 
   return String(res);
 }
 
+async function user_points(username: string) : Promise<number> {
+  let res = await invoke("user_points", {username: username});
+  print(String(res));
+  return parseInt(String(res));
+}
+
+async function user_place(username: string) : Promise<number> {
+  let res = await invoke("user_place", {username: username});
+  print(String(res));
+  return parseInt(String(res));
+}
+
 async function user_role(username: string) : Promise<string> {
   let res = await invoke("user_role", {username: username});
+  print(String(res));
+  return String(res);
+}
+
+async function add_points(username: string, points: number) : Promise<string> {
+  let res = await invoke("add_points", {username: username, points: points});
+  print(String(res));
+  return String(res);
+}
+
+async function verify_user(username: string) : Promise<string> {
+  let res = await invoke("verify_user", {username: username});
+  print(String(res));
+  return String(res);
+}
+
+async function unverify_user(username: string) : Promise<string> {
+  let res = await invoke("unverify_user", {username: username});
   print(String(res));
   return String(res);
 }
