@@ -1,0 +1,10 @@
+/Users/seyonsatheesh/Seyon/FBLA/event-attendence-system/migration/target/debug/deps/sqlformat-8977f484a7efa55a.rmeta: /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/lib.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/formatter.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/indentation.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/inline_block.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/params.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/tokenizer.rs
+
+/Users/seyonsatheesh/Seyon/FBLA/event-attendence-system/migration/target/debug/deps/sqlformat-8977f484a7efa55a.d: /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/lib.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/formatter.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/indentation.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/inline_block.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/params.rs /Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/tokenizer.rs
+
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/lib.rs:
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/formatter.rs:
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/indentation.rs:
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/inline_block.rs:
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/params.rs:
+/Users/seyonsatheesh/.cargo/registry/src/github.com-1ecc6299db9ec823/sqlformat-0.2.0/src/tokenizer.rs:

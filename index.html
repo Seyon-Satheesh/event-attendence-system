@@ -12,7 +12,7 @@
     <!-- MAIN CONTENT OF PAGE -->
     <div id="main">
       <!-- LOGIN/REGISTER POPUP -->
-      <div id="popup">
+      <div id="popup" class="visible">
         <!-- LOGIN PORTION -->
         <div id="login">
           <h1 style="margin: 0; margin-bottom: 2vh; padding: 0; font-size: 5.5vh;">Login</h1>
@@ -68,8 +68,57 @@
 
       <!-- ACTUAL CONTENT -->
       <div id="page" class="invisible">
-        <h1>💖 Hello World!</h1>
-        <p>Welcome to your Electron application.</p>
+        <div id="sidebar">
+          <h1>Logo</h1>
+          <h2 id="dashboard">Dashboard</h2>
+          <hr>
+          <h2 id="events">Events</h2>
+          <hr>
+          <h2 id="users" class="restricted" data-restricted="Principal, Administrator">Users</h2>
+          <hr class="restricted" data-restricted="Principal, Administrator">
+          <h2 id="rankings">Rankings</h2>
+          <hr>
+          <h2 id="prizes">Prizes</h2>
+          <hr>
+          <h2 id="logout">Logout</h2>
+        </div>
+        <div id="content">
+          <div id="dashboard-content" class="visible">
+            <div id="hello">
+              <h1 id="greeting">Hello X, X!</h1>
+            </div>
+            <div id="points-view" class="restricted" data-restricted="Student, Student Leader">
+              <div id="points">
+                <h1>You have <span id="points-counter">X</span> points</h1>
+              </div>
+              <div id="ranks">
+                <h1>You are ranked <span id="place-counter">Xth</span> in the school</h1>
+              </div>
+            </div>
+          </div>
+          <div id="events-content" class="invisible">
+            <h1>💖 Hello World2!</h1>
+            <p>Welcome to your Electron application.</p>
+          </div>
+          <div id="users-content" class="invisible">
+            <h1>💖 Hello World3!</h1>
+            <p>Welcome to your Electron application.</p>
+          </div>
+          <div id="rankings-content" class="invisible">
+            <h1>💖 Hello World4!</h1>
+            <p>Welcome to your Electron application.</p>
+          </div>
+          <div id="prizes-content" class="invisible">
+            <h1>💖 Hello World5!</h1>
+            <p>Welcome to your Electron application.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MINI POPUP -->
+      <div id="mini-popup" class="invisible">
+        <h1 id="mini-popup-message">Pop Up Message</h1>
+        <button id="mini-popup-button">OK</button>
       </div>
     </div>
   </body>

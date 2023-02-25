@@ -25,3 +25,4 @@ dist-ssr
 
 # Sensitive Data
 .env
+migrate_commands.txt

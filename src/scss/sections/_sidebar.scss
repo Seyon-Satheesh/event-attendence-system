@@ -1,0 +1,41 @@
+/* SIDEBAR SECTION */
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5% 0;
+}
+
+#sidebar > h1 {
+    width: 100%;
+    opacity: 87%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 20%;
+}
+
+#sidebar > h2 {
+    width: 100%;
+    opacity: 87%;
+    margin: 2.5% 0 2.5% 2.5%;
+    cursor: pointer;
+    font-size: 4.5vh;
+}
+
+#sidebar > h2:hover {
+    opacity: 60%;
+}
+
+#sidebar > hr {
+    display: block;
+    border-style: inset;
+    border-width: 1px;
+    width: 95%;
+    opacity: 87%;
+    text-align: center;
+    margin-left: 2.5%;
+}
