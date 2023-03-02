@@ -3,10 +3,15 @@
 @use './other/animations';
 @use './other/select';
 
+@use './sections/page';
 @use './sections/popups';
 @use './sections/mini-popup';
 @use './sections/login';
 @use './sections/register';
 @use './sections/sidebar';
 @use './sections/content';
-@use './sections/dashboard'
+@use './sections/dashboard';
+@use './sections/users';
+@use './sections/events';
+@use './sections/rankings';
+@use './sections/prizes';

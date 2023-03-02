@@ -15,8 +15,10 @@
 }
 
 .invisible {
+    clear: both;
+    visibility: hidden;
     display: none;
-  }
+}
   
 .visible {
     display: block;

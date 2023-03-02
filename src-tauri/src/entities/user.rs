@@ -22,6 +22,10 @@ pub struct Model {
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
+    #[sea_orm(has_many = "super::host::Entity")]
+    Host,
+    #[sea_orm(has_many = "super::registrant::Entity")]
+    Registrant,
     #[sea_orm(
         belongs_to = "super::role::Entity",
         from = "Column::Role",
@@ -30,6 +34,18 @@ pub enum Relation {
         on_delete = "NoAction"
     )]
     Role,
+}
+
+impl Related<super::host::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::Host.def()
+    }
+}
+
+impl Related<super::registrant::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::Registrant.def()
+    }
 }
 
 impl Related<super::role::Entity> for Entity {
