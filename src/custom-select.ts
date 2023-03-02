@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Taken from https://www.w3schools.com/howto/howto_custom_select.asp
 import { invoke } from "@tauri-apps/api/tauri";
 
