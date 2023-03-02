@@ -69,7 +69,8 @@
       <!-- ACTUAL CONTENT -->
       <div id="page" class="invisible">
         <div id="sidebar">
-          <h1>Logo</h1>
+          <!-- <h1>Logo</h1> -->
+          <img id="logo" src="/src/assets/logo.png">
           <h2 id="dashboard">Dashboard</h2>
           <hr>
           <h2 id="events">Events</h2>
@@ -95,22 +96,133 @@
                 <h1>You are ranked <span id="place-counter">Xth</span> in the school</h1>
               </div>
             </div>
+            <h3 id="nothing-here" class="restricted" data-restricted="Principal, Administrator">Your dashboard is currently empty!</h3>
           </div>
           <div id="events-content" class="invisible">
-            <h1>💖 Hello World2!</h1>
-            <p>Welcome to your Electron application.</p>
+            <h1>Events</h1>
+            <button id="add-event" class="restricted" data-restricted="Principal, Administrator">+</button>
+            <div id="events-list">
+              <div class="event odd-event">
+                <h1>Event Name</h1>
+                <div class="event-info">
+                  <h3>Date: <span class="event-date">2023-02-28</span></h3>
+                  <h3>Host(s): <span class="event-hosts">Satheesh, Seyon...</span></h3>
+                  <h3>Point(s): <span class="event-points">10</span></h3>
+                </div>
+                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus architecto maxime, amet aut sit sed ad quia ratione excepturi! Sed molestiae harum recusandae nostrum assumenda? Minima facilis eligendi unde! Odio!</h3>
+                <div class="event-buttons">
+                  <button>Register</button>
+                  <button>Unregister</button>
+                </div>
+              </div>
+              <div class="event even-event">
+                <h1>Event Name</h1>
+                <div class="event-info">
+                  <h3>Date: <span class="event-date">2023-02-28</span></h3>
+                  <h3>Host(s): <span class="event-hosts">Satheesh, Seyon...</span></h3>
+                  <h3>Point(s): <span class="event-points">10</span></h3>
+                </div>
+                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus architecto maxime, amet aut sit sed ad quia ratione excepturi! Sed molestiae harum recusandae nostrum assumenda? Minima facilis eligendi unde! Odio!</h3>
+              </div>
+              <div class="event odd-event">
+                <h1>Event Name</h1>
+                <div class="event-info">
+                  <h3>Date: <span class="event-date">2023-02-28</span></h3>
+                  <h3>Host(s): <span class="event-hosts">Satheesh, Seyon...</span></h3>
+                  <h3>Point(s): <span class="event-points">10</span></h3>
+                </div>
+                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus architecto maxime, amet aut sit sed ad quia ratione excepturi! Sed molestiae harum recusandae nostrum assumenda? Minima facilis eligendi unde! Odio!</h3>
+              </div>
+            </div>
+            <div id="add-event-view" class="invisible">
+              <h1>Add Event</h1>
+              <button id="close-event">x</button>
+              <h3 id="event-error" class="invisible">Something Went Wrong</h3>
+              <form id="add-event-form">
+                <label for="event-name">Name: </label>
+                <input type="text" id="event-name" class="event-input">
+                <label for="event-hosts">Other Hosts (Comma-Separated): </label>
+                <input type="text" id="event-hosts" class="event-input">
+                <label for="event-description">Description: </label>
+                <textarea id="event-description" class="event-input"></textarea>
+                <label for="event-points">Points Given: </label>
+                <input type="number" min="0" id="event-points" class="event-input">
+                <label for="event-date">Date: </label>
+                <input type="date" id="event-date" class="event-input">
+                <button type="submit" id="event-button" class="event-input">Add Event</button>
+              </form>
+            </div>
           </div>
           <div id="users-content" class="invisible">
-            <h1>💖 Hello World3!</h1>
-            <p>Welcome to your Electron application.</p>
+            <h1>Users</h1>
+            <table id="all-users">
+              <tr class="odd-row">
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Grade</th>
+                <th>Status</th>
+              </tr>
+              <tr class="even-row">
+                <td>McKenzie</td>
+                <td>Bob</td>
+                <td>CoolPrince</td>
+                <td>bobmckenzie@gmail.com</td>
+                <td>Principal</td>
+                <td>-</td>
+                <td><button class="unverify">Unverify</button></td>
+              </tr>
+              <tr class="odd-row">
+                <td>Satheesh</td>
+                <td>Seyon</td>
+                <td>GoodStudent</td>
+                <td>seyon.satheesh@gmail.com</td>
+                <td>Student</td>
+                <td>9</td>
+                <td><button class="verify">Verify</button></td>
+              </tr>
+            </table>
           </div>
           <div id="rankings-content" class="invisible">
-            <h1>💖 Hello World4!</h1>
-            <p>Welcome to your Electron application.</p>
+            <h1>Rankings</h1>
+            <table id="rankings-table">
+              <tr class="odd-rank">
+                <th>Place</th>
+                <th>Username</th>
+                <th>Points</th>
+              </tr>
+              <tr class="even-rank">
+                <td>1</td>
+                <td>BestStudent</td>
+                <td>20</td>
+              </tr>
+              <tr class="odd-rank">
+                <td>2</td>
+                <td>BestStudent</td>
+                <td>10</td>
+              </tr>
+              <tr class="even-rank">
+                <td>3</td>
+                <td>BestStudent</td>
+                <td>5</td>
+              </tr>
+            </table>
           </div>
           <div id="prizes-content" class="invisible">
-            <h1>💖 Hello World5!</h1>
-            <p>Welcome to your Electron application.</p>
+            <h1>Prizes</h1>
+            <h3>Main Winner (Free School Hoodie):</h3>
+            <h3 id="main-winner" class="prize-winner">CoolestPrincipal</h3>
+            <h3>Grade 9 Winner (Free Cafeteria Lunch):</h3>
+            <h3 id="grade-9-winner" class="prize-winner">CoolestPrincipal</h3>
+            <h3>Grade 10 Winner (Free Cafeteria Lunch):</h3>
+            <h3 id="grade-10-winner" class="prize-winner">CoolestPrincipal</h3>
+            <h3>Grade 11 Winner (Free 3D Prints):</h3>
+            <h3 id="grade-11-winner" class="prize-winner">CoolestPrincipal</h3>
+            <h3>Grade 12 Winner (Free 3D Prints):</h3>
+            <h3 id="grade-12-winner" class="prize-winner">CoolestPrincipal</h3>
+            <button id="generate-winners">Generate New Winners</button>
           </div>
         </div>
       </div>

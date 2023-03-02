@@ -28,7 +28,8 @@ body {
 #main {
   height: 100%;
   padding: 20px;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 html, body {
@@ -75,6 +76,8 @@ p {
 }
 
 .invisible {
+  clear: both;
+  visibility: hidden;
   display: none;
 }
 
@@ -226,6 +229,22 @@ p {
   font-size: 2.5vh;
   z-index: 50;
   color: rgba(255, 255, 255, 0.4);
+}
+
+/* PAGE SECTION */
+#page {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#sidebar {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#content {
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 /* STYLING OF LOGIN/REGISTER POPUP */
@@ -466,6 +485,10 @@ p {
   margin-left: 2.5%;
 }
 
+#logo {
+  width: 100%;
+}
+
 /* CONTENT SECTION */
 #content {
   position: absolute;
@@ -521,4 +544,391 @@ p {
   top: 2px;
   bottom: 2px;
   left: 100%;
+}
+
+#nothing-here {
+  font-size: 3vh;
+  opacity: 0.67;
+}
+
+/* USERS SECTION */
+#all-users {
+  width: 100%;
+  height: 100%;
+  padding: 2.5% 2.5%;
+  text-align: center;
+  vertical-align: middle;
+  table-layout: fixed;
+  border-radius: 12px;
+  border-collapse: collapse;
+}
+
+#all-users th, #all-users td {
+  padding: 1%;
+  width: 14.2857142857%;
+  vertical-align: middle;
+  font-size: 2.5vh;
+}
+
+#all-users th {
+  opacity: 80%;
+}
+
+#all-users td {
+  opacity: 67%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.odd-row {
+  background-color: rgba(255, 255, 255, 0.18);
+  height: 6vh;
+}
+
+.even-row {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 6vh;
+}
+
+.verify {
+  width: 95%;
+  height: 90%;
+  border-radius: 4px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.verify:hover {
+  color: #000;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.unverify {
+  width: 95%;
+  height: 90%;
+  border-radius: 4px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.unverify:hover {
+  color: #000;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#all-users tr:first-of-type th:first-of-type {
+  border-top-left-radius: 8px;
+}
+
+#all-users tr:first-of-type th:last-of-type {
+  border-top-right-radius: 8px;
+}
+
+#all-users tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 8px;
+}
+
+#all-users tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 8px;
+}
+
+/* EVENTS SECTION */
+#events-content h1 {
+  display: inline;
+}
+
+#add-event {
+  float: right;
+  width: 5vh;
+  height: 5vh;
+  font-size: 5vh;
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  display: inline;
+  margin-bottom: 5%;
+}
+
+#add-event:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+#close-event {
+  float: right;
+  width: 5vh;
+  height: 5vh;
+  font-size: 5vh;
+  color: rgba(255, 255, 255, 0.87);
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  display: inline;
+  margin-bottom: 5%;
+}
+
+#close-event:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#events-list {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.event {
+  width: 100%;
+  height: 33.3333333333%;
+  padding: 2.5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+}
+
+.event h1 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 5vh;
+  width: 50%;
+  margin: 1vh 0 0.5vh 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event h3 {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2vh;
+  width: 70%;
+  height: 100%;
+}
+
+.event-info {
+  margin-top: 0.5vh;
+  margin-bottom: 0.25vh;
+}
+
+.event-info h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2vh;
+  width: 50%;
+  height: 100%;
+  font-weight: bold;
+  margin-bottom: 0.25vh;
+  float: none;
+}
+
+.event-info span {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: normal;
+}
+
+.event-buttons {
+  width: 30%;
+  padding: 1%;
+  float: right;
+  vertical-align: middle;
+  transform: translate(0, -200%);
+}
+
+.event-buttons button {
+  width: 100%;
+  height: 4vh;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.event-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.odd-event {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.even-event {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#events-list div:first-of-type {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#events-list div:last-of-type {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom: 0;
+}
+
+#add-event-view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5%;
+  background-color: #121212;
+}
+
+#add-event-form {
+  margin-top: 2vh;
+}
+
+#add-event-form h3 {
+  display: inline-block;
+  font-size: 3vh;
+  opacity: 0.67;
+}
+
+#hosts {
+  overflow-y: scroll;
+}
+
+#hosts input {
+  width: 30%;
+}
+
+.event-input {
+  width: 100%;
+  height: 6vh;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.5vh;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 3vh;
+  padding: 1vh 2vh;
+}
+
+#add-event-form textarea {
+  resize: none;
+  height: 12vh;
+}
+
+#add-event-form button {
+  margin-top: 2vh;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#add-event-form button:hover {
+  margin-top: 2vh;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+#add-event-form label {
+  display: inline-block;
+  font-size: 3vh;
+  opacity: 0.67;
+  margin-bottom: 0.5vh;
+}
+
+#event-error {
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 3vh;
+  margin-top: 2vh;
+}
+
+/* RANKINGS SECTION */
+#rankings-table {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 12px;
+  border-collapse: collapse;
+}
+
+.odd-rank {
+  background-color: rgba(255, 255, 255, 0.18);
+  height: 6vh;
+}
+
+.even-rank {
+  background-color: rgba(255, 255, 255, 0.08);
+  height: 6vh;
+}
+
+#rankings-table th, #rankings-table td {
+  vertical-align: middle;
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+#rankings-table td {
+  opacity: 0.67;
+  font-weight: normal;
+}
+
+#rankings-table tr:first-of-type th:first-of-type {
+  border-top-left-radius: 8px;
+}
+
+#rankings-table tr:first-of-type th:last-of-type {
+  border-top-right-radius: 8px;
+}
+
+#rankings-table tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 8px;
+}
+
+#rankings-table tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 8px;
+}
+
+/* PRIZES SECTION */
+#prizes-content {
+  text-align: center;
+}
+
+#prizes-content h3 {
+  font-size: 4vh;
+  font-weight: bold;
+  opacity: 0.9;
+  margin: 1vh 0;
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#prizes-content #main-winner, #prizes-content #grade-9-winner, #prizes-content #grade-10-winner, #prizes-content #grade-11-winner, #prizes-content #grade-12-winner {
+  font-weight: normal;
+  text-align: right;
+  opacity: 0.6;
+}
+
+#prizes-content h3:first-of-type, #prizes-content #main-winner {
+  width: 100%;
+  text-align: center;
+}
+
+#prizes-content button {
+  width: 80%;
+  text-align: center;
+  margin-top: 2vh;
+  height: 6vh;
+  border-radius: 8px;
+  font-size: 3vh;
+  border: 1px solid rgba(255, 255, 255, 0.67);
+  color: rgba(255, 255, 255, 0.67);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+#prizes-content button:hover {
+  background-color: rgba(255, 255, 255, 0.18);
 }/*# sourceMappingURL=style.css.map */

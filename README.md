@@ -1,6 +1,6 @@
-# Tauri + Vanilla TS
+# ShowUp - Getting People At Your Events
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
+This is my project for FBLA CNLC's Coding and Programming Event. This is an Event Attendance System that allows Students, Teachers, Office Administrators and Principals to view, create and join upcoming events. Students are incentivized to participate in these events with points that place them in contention of winning school, food and school spirit prizes.
 
 ## Recommended IDE Setup
 

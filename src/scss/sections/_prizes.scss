@@ -1,0 +1,43 @@
+/* PRIZES SECTION */
+
+#prizes-content {
+    text-align: center;
+}
+
+#prizes-content h3 {
+    font-size: 4vh;
+    font-weight: bold;
+    opacity: 0.9;
+    margin: 1vh 0;
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#prizes-content #main-winner, #prizes-content #grade-9-winner, #prizes-content #grade-10-winner, #prizes-content #grade-11-winner, #prizes-content #grade-12-winner {
+    font-weight: normal;
+    text-align: right;
+    opacity: 0.6;
+}
+
+#prizes-content h3:first-of-type, #prizes-content #main-winner {
+    width: 100%;
+    text-align: center;
+}
+
+#prizes-content button {
+    width: 80%;
+    text-align: center;
+    margin-top: 2vh;
+    height: 6vh;
+    border-radius: 8px;
+    font-size: 3vh;
+    border: 1px solid rgba(255, 255, 255, 0.67);
+    color: rgba(255, 255, 255, 0.67);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#prizes-content button:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}

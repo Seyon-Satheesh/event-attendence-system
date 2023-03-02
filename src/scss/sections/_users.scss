@@ -1,0 +1,99 @@
+/* USERS SECTION */
+
+#all-users {
+    width: 100%;
+    height: 100%;
+    padding: 2.5% 2.5%;
+    text-align: center;
+    vertical-align: middle;
+    table-layout: fixed;
+    border-radius: 12px;
+    //border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#all-users th, #all-users td {
+    padding: 1%;
+    width: calc(100% / 7);
+    vertical-align: middle;
+    font-size: 2.5vh;
+}
+
+#all-users th {
+    opacity: 80%;
+}
+
+#all-users td {
+    opacity: 67%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+}
+
+// #all-users td:hover:after {
+//     content: "aaaa";
+//     position: absolute;
+//     transform: translate(-20%, -200%);
+//     overflow: visible; 
+//     white-space: normal;
+//     color: #000;
+//     background-color: rgba(255, 255, 255, 1);
+//     height: auto;  /* just added this line */
+// }
+
+.odd-row {
+    background-color: rgba(255, 255, 255, 0.18);
+    height: 6vh;
+}
+
+.even-row {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 6vh;
+}
+
+.verify {
+    width: 95%;
+    height: 90%;
+    border-radius: 4px;
+    color: #FFF;
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.verify:hover {
+    color: #000;
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.unverify {
+    width: 95%;
+    height: 90%;
+    border-radius: 4px;
+    color: #FFF;
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.unverify:hover {
+    color: #000;
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#all-users tr:first-of-type th:first-of-type {
+    border-top-left-radius: 8px;
+}
+
+#all-users tr:first-of-type th:last-of-type {
+    border-top-right-radius: 8px;
+}
+
+#all-users tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 8px;
+}
+
+#all-users tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 8px;
+}

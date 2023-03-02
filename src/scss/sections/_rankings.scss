@@ -1,0 +1,46 @@
+/* RANKINGS SECTION */
+
+#rankings-table {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 12px;
+    border-collapse: collapse;
+}
+
+.odd-rank {
+    background-color: rgba(255, 255, 255, 0.18);
+    height: 6vh;
+}
+
+.even-rank {
+    background-color: rgba(255, 255, 255, 0.08);
+    height: 6vh;
+}
+
+#rankings-table th, #rankings-table td {
+    vertical-align: middle;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+#rankings-table td {
+    opacity: 0.67;
+    font-weight: normal;
+}
+
+#rankings-table tr:first-of-type th:first-of-type {
+    border-top-left-radius: 8px;
+}
+
+#rankings-table tr:first-of-type th:last-of-type {
+    border-top-right-radius: 8px;
+}
+
+#rankings-table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 8px;
+}
+
+#rankings-table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 8px;
+}

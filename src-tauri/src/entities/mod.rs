@@ -2,5 +2,9 @@
 
 pub mod prelude;
 
+pub mod event;
+pub mod host;
+pub mod prize;
+pub mod registrant;
 pub mod role;
 pub mod user;
